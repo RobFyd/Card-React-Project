@@ -1,4 +1,10 @@
 function App() {
+  const buttonEl = (
+    <button onClick={() => alert("Darth Vader is Luke Skywalker’s father!")}>
+      Show spoiler
+    </button>
+  );
+
   // document.querySelector("button").addEventListener("click", () => {
   //   alert("Darth Vader is Luke Skywalker’s father!");
   // });
@@ -14,11 +20,11 @@ function App() {
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
-      <button>Show spoiler</button>
+      {buttonEl}
       <p>
         Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
         forces but are ultimately betrayed by Lando Calrissian on Cloud City. In
-        the film's climactic moment, Luke confronts Darth Vader and learns the
+        the film`s climactic moment, Luke confronts Darth Vader and learns the
         shocking truth: Vader is his father.
       </p>
     </>
