@@ -1,18 +1,11 @@
 import { useState } from "react";
 
 function App() {
-  const isSpoilerVisibleState = useState(false);
-  console.log(isSpoilerVisibleState);
-
-  let isSpoilerVisible = isSpoilerVisibleState[0];
-  const setIsSpoilerVisible = isSpoilerVisibleState[1];
+  const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
 
   function handleClick() {
     setIsSpoilerVisible(true);
-    console.log("isSpoilerVisible");
   }
-
-  console.log("App render");
 
   return (
     <>
