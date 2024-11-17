@@ -1,26 +1,14 @@
 function App() {
-  function logMouseOut() {
-    console.log("Mouse left the button");
-  }
-
   // event handlers should be defined inside the component
   const buttonEl = (
     <button
       onClick={() => {
         alert("Darth Vader is Luke Skywalker’s father!");
       }}
-      onMouseEnter={function () {
-        console.log("Mouse entered the button");
-      }}
-      onMouseOut={logMouseOut}
     >
       Show spoiler
     </button>
   );
-
-  // document.querySelector("button").addEventListener("click", () => {
-  //   alert("Darth Vader is Luke Skywalker’s father!");
-  // });
 
   return (
     <>
