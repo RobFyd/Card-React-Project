@@ -1,6 +1,6 @@
-export function ButtonStrong({ children }) {
+export function ButtonStrong({ children, onClick }) {
   return (
-    <button onClick={() => alert("STROG click")}>
+    <button onClick={onClick}>
       <strong>{children}</strong>
     </button>
   );

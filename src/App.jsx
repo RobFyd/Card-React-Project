@@ -27,6 +27,9 @@ function App() {
       <ButtonStrong onClick={() => alert("STRONG spoiler")}>
         Show STRONG spoiler
       </ButtonStrong>
+      <ButtonStrong onClick={() => alert("second STRONG spoiler")}>
+        Show STRONG spoiler
+      </ButtonStrong>
       <p>
         Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
         forces but are ultimately betrayed by Lando Calrissian on Cloud City. In
