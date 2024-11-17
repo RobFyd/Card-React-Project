@@ -1,4 +1,6 @@
 function App() {
+  let isSpoilerVisible = false;
+
   function handleClick() {
     alert("Darth Vader is Luke Skywalker’s father!");
   }
@@ -15,12 +17,14 @@ function App() {
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
       <button onClick={handleClick}>Show spoiler</button>
-      <p>
-        Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
-        forces but are ultimately betrayed by Lando Calrissian on Cloud City. In
-        the film`s climactic moment, Luke confronts Darth Vader and learns the
-        shocking truth: Vader is his father.
-      </p>
+      {isSpoilerVisible && (
+        <p>
+          Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
+          forces but are ultimately betrayed by Lando Calrissian on Cloud City.
+          In the film`s climactic moment, Luke confronts Darth Vader and learns
+          the shocking truth: Vader is his father.
+        </p>
+      )}
     </>
   );
 }
