@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { LikesCounter } from "./components/LikesCounter";
 
 function App() {
   const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
   const [isWarningVisible, setIsWarningVisible] = useState(true);
-  const [numberOfLikes, setNumberOfLikes] = useState(0);
 
   function handleShowSpoilerClick() {
     setIsSpoilerVisible(true);
@@ -14,21 +14,11 @@ function App() {
     setIsWarningVisible(false);
   }
 
-  function handleLikeButtonClick() {
-    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 1);
-  }
-
-  function handleLoveButtonClick() {
-    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 3);
-  }
-
   return (
     <>
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
-      <h2>Likes: {numberOfLikes}</h2>
-      <button onClick={handleLikeButtonClick}>Like it!</button>
-      <button onClick={handleLoveButtonClick}>Love it!</button>
+      <LikesCounter />
       <h2>Storyline:</h2>
       {isWarningVisible && (
         <p>
