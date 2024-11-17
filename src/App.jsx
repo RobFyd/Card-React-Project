@@ -1,49 +1,36 @@
 import { useState } from "react";
 
-const initialState = {
-  isSpoilerVisible: false,
-  isWarningVisible: true,
-  numberOfLikes: 0,
-};
-
 function App() {
-  const [state, setState] = useState(initialState);
+  const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
+  const [isWarningVisible, setIsWarningVisible] = useState(true);
+  const [numberOfLikes, setNumberOfLikes] = useState(0);
 
   function handleShowSpoilerClick() {
-    setState((prevState) => ({
-      ...prevState,
-      isWarningVisible: false,
-      isSpoilerVisible: true,
-    }));
+    setIsSpoilerVisible(true);
+    setIsWarningVisible(false);
   }
 
   function handleCloseWarningClick() {
-    setState((prevState) => ({ ...prevState, isWarningVisible: false }));
+    setIsWarningVisible(false);
   }
 
   function handleLikeButtonClick() {
-    setState((prevState) => ({
-      ...prevState,
-      numberOfLikes: prevState.numberOfLikes + 1,
-    }));
+    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 1);
   }
 
   function handleLoveButtonClick() {
-    setState((prevState) => ({
-      ...prevState,
-      numberOfLikes: prevState.numberOfLikes + 3,
-    }));
+    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 3);
   }
 
   return (
     <>
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
-      <h2>Likes: {state.numberOfLikes}</h2>
+      <h2>Likes: {numberOfLikes}</h2>
       <button onClick={handleLikeButtonClick}>Like it!</button>
       <button onClick={handleLoveButtonClick}>Love it!</button>
       <h2>Storyline:</h2>
-      {state.isWarningVisible && (
+      {isWarningVisible && (
         <p>
           Warning! The plot description contains spoilers!
           <button onClick={handleCloseWarningClick}>X</button>
@@ -55,7 +42,7 @@ function App() {
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
-      {state.isSpoilerVisible ? (
+      {isSpoilerVisible ? (
         <p>
           Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
           forces but are ultimately betrayed by Lando Calrissian on Cloud City.
