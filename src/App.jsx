@@ -1,21 +1,32 @@
 import { useState } from "react";
 
+const initialState = {
+  isSpoilerVisible: false,
+  isWarningVisible: true,
+  numberOfLikes: 0,
+};
+
 function App() {
   const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
   const [isWarningVisible, setIsWarningVisible] = useState(true);
   const [numberOfLikes, setNumberOfLikes] = useState(0);
 
+  const [state, setState] = useState(initialState);
+
   function handleShowSpoilerClick() {
-    setIsSpoilerVisible(true);
-    setIsWarningVisible(false);
+    setState((prevState) => ({
+      ...prevState,
+      isWarningVisible: false,
+      isSpoilerVisible: true,
+    }));
   }
 
   function handleCloseWarningClick() {
-    setIsWarningVisible(false);
+    setState((prevState) => ({ ...prevState, isWarningVisible: false }));
   }
 
   function handleLikeButtonClick() {
-    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 1);
+    setState((prevState) => ({ ...prevState, numberOfLikes: +1 }));
   }
 
   function handleLoveButtonClick() {
@@ -26,11 +37,11 @@ function App() {
     <>
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
-      <h2>Likes: {numberOfLikes}</h2>
+      <h2>Likes: {state.numberOfLikes}</h2>
       <button onClick={handleLikeButtonClick}>Like it!</button>
       <button onClick={handleLoveButtonClick}>Love it!</button>
       <h2>Storyline:</h2>
-      {isWarningVisible && (
+      {state.isWarningVisible && (
         <p>
           Warning! The plot description contains spoilers!
           <button onClick={handleCloseWarningClick}>X</button>
@@ -42,7 +53,7 @@ function App() {
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
-      {isSpoilerVisible ? (
+      {state.isSpoilerVisible ? (
         <p>
           Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
           forces but are ultimately betrayed by Lando Calrissian on Cloud City.
