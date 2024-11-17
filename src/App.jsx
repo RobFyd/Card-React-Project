@@ -7,10 +7,6 @@ const initialState = {
 };
 
 function App() {
-  const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
-  const [isWarningVisible, setIsWarningVisible] = useState(true);
-  const [numberOfLikes, setNumberOfLikes] = useState(0);
-
   const [state, setState] = useState(initialState);
 
   function handleShowSpoilerClick() {
@@ -26,11 +22,17 @@ function App() {
   }
 
   function handleLikeButtonClick() {
-    setState((prevState) => ({ ...prevState, numberOfLikes: +1 }));
+    setState((prevState) => ({
+      ...prevState,
+      numberOfLikes: prevState.numberOfLikes + 1,
+    }));
   }
 
   function handleLoveButtonClick() {
-    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 3);
+    setState((prevState) => ({
+      ...prevState,
+      numberOfLikes: prevState.numberOfLikes + 3,
+    }));
   }
 
   return (
