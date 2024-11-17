@@ -1,16 +1,7 @@
-import { ButtonStrong } from "./components/ButtonStrong";
-
 function App() {
-  // event handlers should be defined inside the component
-  const buttonEl = (
-    <button
-      onClick={() => {
-        alert("Darth Vader is Luke Skywalker’s father!");
-      }}
-    >
-      Show spoiler
-    </button>
-  );
+  function handleClick() {
+    alert("Darth Vader is Luke Skywalker’s father!");
+  }
 
   return (
     <>
@@ -23,13 +14,7 @@ function App() {
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
-      {buttonEl}
-      <ButtonStrong onClick={() => alert("STRONG spoiler")}>
-        Show STRONG spoiler
-      </ButtonStrong>
-      <ButtonStrong onClick={() => alert("second STRONG spoiler")}>
-        Show STRONG spoiler
-      </ButtonStrong>
+      <button onClick={handleClick}>Show spoiler</button>
       <p>
         Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
         forces but are ultimately betrayed by Lando Calrissian on Cloud City. In
