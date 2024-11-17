@@ -1,9 +1,18 @@
+import { useState } from "react";
+
 function App() {
-  let isSpoilerVisible = false;
+  const isSpoilerVisibleState = useState(false);
+  console.log(isSpoilerVisibleState);
+
+  let isSpoilerVisible = isSpoilerVisibleState[0];
+  const setIsSpoilerVisible = isSpoilerVisibleState[1];
 
   function handleClick() {
-    alert("Darth Vader is Luke Skywalker’s father!");
+    setIsSpoilerVisible(true);
+    console.log("isSpoilerVisible");
   }
+
+  console.log("App render");
 
   return (
     <>
