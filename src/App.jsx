@@ -1,3 +1,5 @@
+import { ButtonStrong } from "./components/ButtonStrong";
+
 function App() {
   // event handlers should be defined inside the component
   const buttonEl = (
@@ -22,6 +24,9 @@ function App() {
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
       {buttonEl}
+      <ButtonStrong onClick={() => alert("STRONG spoiler")}>
+        Show STRONG spoiler
+      </ButtonStrong>
       <p>
         Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
         forces but are ultimately betrayed by Lando Calrissian on Cloud City. In
