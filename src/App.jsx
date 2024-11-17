@@ -2,11 +2,9 @@ import { useState } from "react";
 
 function App() {
   const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
-  const [isButtonVisible, setIsButtonVisible] = useState(true);
 
   function handleClick() {
     setIsSpoilerVisible(true);
-    setIsButtonVisible(false);
   }
 
   return (
@@ -20,14 +18,15 @@ function App() {
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
         train with Jedi Master Yoda, learning the ways of the Force.
       </p>
-      {isButtonVisible && <button onClick={handleClick}>Show spoiler</button>}
-      {isSpoilerVisible && (
+      {isSpoilerVisible ? (
         <p>
           Meanwhile, Han Solo, Princess Leia, and their allies evade Imperial
           forces but are ultimately betrayed by Lando Calrissian on Cloud City.
           In the film`s climactic moment, Luke confronts Darth Vader and learns
           the shocking truth: Vader is his father.
         </p>
+      ) : (
+        <button onClick={handleClick}>Show spoiler</button>
       )}
     </>
   );
