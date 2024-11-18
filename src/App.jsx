@@ -1,5 +1,6 @@
 import { LikesCounter } from "./components/LikesCounter";
 import { Plot } from "./components/Plot";
+import { Review } from "./components/Review";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h2>Year of production: 1980</h2>
       <LikesCounter />
       <Plot />
+      <Review />
     </>
   );
 }
