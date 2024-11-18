@@ -1,10 +1,15 @@
 import { useState } from "react";
 
 export function Review() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("Review submitted");
+  }
+
   return (
     <>
       <h2>Add review</h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div>
           <div>
             <label htmlFor="author">Author</label>
@@ -13,7 +18,7 @@ export function Review() {
         </div>
         <div>
           <div>
-            <label htmlFor="">Text</label>
+            <label htmlFor="text">Text</label>
           </div>
           <textarea name="text" id="text" placeholder="Your review"></textarea>
         </div>
