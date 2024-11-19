@@ -1,12 +1,16 @@
 import { useState } from "react";
 
 export function Form() {
+  const [review, setReview] = useState(null);
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
 
     const author = event.target[0].value;
     const text = event.target[1].value;
+
+    setReview({ author, text });
   }
 
   return (

@@ -1,6 +1,6 @@
 import { LikesCounter } from "./components/LikesCounter";
 import { Plot } from "./components/Plot";
-import { Form } from "./components/Review";
+import { Form } from "./components/Form";
 
 function App() {
   return (
