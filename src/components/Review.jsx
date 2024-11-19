@@ -3,7 +3,12 @@ import { useState } from "react";
 export function Review() {
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("Review submitted");
+    console.log(event);
+
+    const author = event.target[0].value;
+    console.log(author);
+    const text = event.target[1].value;
+    console.log(text);
   }
 
   return (
