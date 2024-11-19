@@ -1,14 +1,12 @@
 import { useState } from "react";
 
-export function Review() {
+export function Form() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
 
     const author = event.target[0].value;
-    console.log(author);
     const text = event.target[1].value;
-    console.log(text);
   }
 
   return (
