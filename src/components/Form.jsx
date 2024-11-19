@@ -3,6 +3,8 @@ import { useState } from "react";
 export function Form() {
   const [review, setReview] = useState(null);
 
+  console.log(review);
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(event);
@@ -15,6 +17,12 @@ export function Form() {
 
   return (
     <>
+      {review && (
+        <article>
+          <strong>{review.author}</strong>
+          <p>{review.text}</p>
+        </article>
+      )}
       <h2>Add review</h2>
       <form onSubmit={handleSubmit}>
         <div>
