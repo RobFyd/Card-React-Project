@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export function Form() {
   const [review, setReview] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+  const [textareaValue, setTextareaValue] = useState("");
 
   console.log(review);
 
@@ -9,11 +11,13 @@ export function Form() {
     event.preventDefault();
     console.log(event);
 
-    const author = event.target[0].value;
-    const text = event.target[1].value;
+    const author = inputValue;
+    const text = textareaValue;
 
     setReview({ author, text });
   }
+
+  console.log("ghgh", inputValue);
 
   return (
     <>
@@ -29,13 +33,23 @@ export function Form() {
           <div>
             <label htmlFor="author">Author</label>
           </div>
-          <input type="text" name="author" id="author" />
+          <input
+            type="text"
+            name="author"
+            id="author"
+            onChange={(event) => setInputValue(event.target.value)}
+          />
         </div>
         <div>
           <div>
             <label htmlFor="text">Text</label>
           </div>
-          <textarea name="text" id="text" placeholder="Your review"></textarea>
+          <textarea
+            name="text"
+            id="text"
+            placeholder="Your review"
+            onChange={(event) => setTextareaValue(event.target.value)}
+          ></textarea>
         </div>
         <button type="submit">Submit</button>
       </form>
