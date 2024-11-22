@@ -18,6 +18,7 @@ export function Form() {
   }
 
   console.log("ghgh", inputValue);
+  console.log("ghgh", textareaValue);
 
   return (
     <>
@@ -37,6 +38,7 @@ export function Form() {
             type="text"
             name="author"
             id="author"
+            value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
           />
         </div>
@@ -48,10 +50,16 @@ export function Form() {
             name="text"
             id="text"
             placeholder="Your review"
+            value={textareaValue}
             onChange={(event) => setTextareaValue(event.target.value)}
           ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          disabled={inputValue === "" || textareaValue === ""}
+        >
+          Submit
+        </button>
       </form>
     </>
   );
