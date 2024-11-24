@@ -5,20 +5,14 @@ export function Form() {
   const [inputValue, setInputValue] = useState("");
   const [textareaValue, setTextareaValue] = useState("");
 
-  console.log(review);
-
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
 
     const author = inputValue;
     const text = textareaValue;
 
     setReview({ author, text });
   }
-
-  console.log("ghgh", inputValue);
-  console.log("ghgh", textareaValue);
 
   return (
     <>
