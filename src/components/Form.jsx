@@ -23,11 +23,12 @@ export function Form() {
     const author = inputValue;
     const text = textareaValue;
 
-    const newReview = { author, text };
-
     setReviews((prevReviews) => {
-      return [newReview, ...prevReviews];
+      return [{ author, text, id: prevReviews.length + 1 }, ...prevReviews];
     });
+
+    setInputValue("");
+    setTextareaValue("");
   }
 
   return (
