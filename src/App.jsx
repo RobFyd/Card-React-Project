@@ -17,7 +17,13 @@ function App() {
     <>
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
-      <button onClick={() => {}}>Hide Likes</button>
+      <button
+        onClick={() => {
+          setIsLikesVisible((prevIsLikesVisible) => !prevIsLikesVisible);
+        }}
+      >
+        {isLikesVisible ? "Hide" : "Show"} likes
+      </button>
       {isLikesVisible && <LikesCounter />}
       <Plot />
       <Reviews reviews={reviews} />
