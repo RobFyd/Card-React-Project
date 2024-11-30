@@ -11,12 +11,14 @@ const initialReviews = [
 
 function App() {
   const [reviews, setReviews] = useState(initialReviews);
+  const [isLikesVisible, setIsLikesVisible] = useState(true);
 
   return (
     <>
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
-      <LikesCounter />
+      <button onClick={() => {}}>Hide Likes</button>
+      {isLikesVisible && <LikesCounter />}
       <Plot />
       <Reviews reviews={reviews} />
       <Form
