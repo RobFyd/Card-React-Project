@@ -19,7 +19,16 @@ function App() {
       <LikesCounter />
       <Plot />
       <Reviews reviews={reviews} />
-      <Form />
+      <Form
+        onReviewSubmit={(author, text) => {
+          setReviews((prevReviews) => {
+            return [
+              { author, text, id: prevReviews.length + 1 },
+              ...prevReviews,
+            ];
+          });
+        }}
+      />
     </>
   );
 }
