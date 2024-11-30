@@ -12,6 +12,15 @@ const initialReviews = [
 function App() {
   const [reviews, setReviews] = useState(initialReviews);
   const [isLikesVisible, setIsLikesVisible] = useState(true);
+  const [numberOfLikes, setNumberOfLikes] = useState(0);
+
+  function handleLikeButtonClick() {
+    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 1);
+  }
+
+  function handleLoveButtonClick() {
+    setNumberOfLikes((previousNumberOfLikes) => previousNumberOfLikes + 3);
+  }
 
   return (
     <>
@@ -24,7 +33,13 @@ function App() {
       >
         {isLikesVisible ? "Hide" : "Show"} likes
       </button>
-      {isLikesVisible && <LikesCounter />}
+      {isLikesVisible && (
+        <LikesCounter
+          numberOfLikes={numberOfLikes}
+          onLikeButtonClick={handleLikeButtonClick}
+          onLoveButtonClick={handleLoveButtonClick}
+        />
+      )}
       <Plot />
       <Reviews reviews={reviews} />
       <Form
