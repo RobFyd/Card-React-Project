@@ -1,3 +1,4 @@
+// import "./App.css";
 import { LikesCounter } from "./components/LikesCounter";
 import { Plot } from "./components/Plot";
 import { Form } from "./components/Form";
