@@ -18,7 +18,7 @@ export function Plot() {
       <h2>Storyline:</h2>
       {isWarningVisible && (
         <p>
-          Warning! The plot description contains spoilers!
+          Warning! The plot description contains spoilers!{" "}
           <button onClick={handleCloseWarningClick}>X</button>
         </p>
       )}

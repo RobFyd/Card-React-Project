@@ -6,8 +6,8 @@ export function LikesCounter({
   return (
     <>
       <h2>Likes: {numberOfLikes}</h2>
-      <button onClick={onLikeButtonClick}>Like it!</button>
-      <button onClick={onLoveButtonClick}>Love it!</button>
+      <button onClick={onLikeButtonClick}>Like it! 👍</button>
+      <button onClick={onLoveButtonClick}>Love it! ❤️</button>
     </>
   );
 }

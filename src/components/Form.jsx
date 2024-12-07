@@ -18,7 +18,6 @@ export function Form({ onReviewSubmit }) {
 
   return (
     <>
-      <hr />
       <h2>Add review</h2>
       <form onSubmit={handleSubmit}>
         <div>
