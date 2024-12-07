@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="card">
       <h1>Star Wars: Episode V</h1>
       <h2>Year of production: 1980</h2>
       <button
@@ -53,7 +53,7 @@ function App() {
           });
         }}
       />
-    </>
+    </div>
   );
 }
 
