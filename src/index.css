@@ -1,7 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  text-shadow:
+    0 0 5px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(0, 0, 0, 0.4),
+    0 0 60px rgba(0, 0, 0, 0.3),
+    0 0 70px rgba(0, 0, 0, 0.2);
+
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
