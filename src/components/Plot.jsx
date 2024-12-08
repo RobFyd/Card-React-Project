@@ -26,7 +26,7 @@ export function Plot() {
         In Star Wars: Episode V - The Empire Strikes Back, the Rebel Alliance
         faces a devastating attack on their base on Hoth by the Empire. Luke
         Skywalker, guided by a vision of Obi-Wan Kenobi, travels to Dagobah to
-        train with Jedi Master Yoda, learning the ways of the Force. (test)
+        train with Jedi Master Yoda, learning the ways of the Force.
       </p>
       {isSpoilerVisible ? (
         <p>
