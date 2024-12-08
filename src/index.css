@@ -16,7 +16,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #242424; */
-  background-image: url(assets/images/body-background.png);
+  background-image: url(./assets/images/body-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +57,7 @@ body {
   margin: 40px;
   border: 2px solid #f9f9f9;
   border-radius: 18px;
-  background-image: url(assets/images/welcome-profile.png);
+  background-image: url(./assets/images/welcome-profile.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
