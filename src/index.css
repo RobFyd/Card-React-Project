@@ -10,17 +10,8 @@
     0 0 40px rgba(0, 0, 0, 0.5);
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgb(255, 255, 255);
   /* background-color: #242424; */
-  background-image: url(./assets/images/body-background.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 }
 
 a {
@@ -42,22 +33,40 @@ body {
   min-height: 100vh;
 }
 
+.screen-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background-image: url(./assets/images/body-background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  max-width: 600px;
+  max-width: 700px;
   padding: 15px;
   margin: 40px;
   border: 2px solid #f9f9f9;
   border-radius: 18px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
   background-image: url(./assets/images/welcome-profile.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
+
+
 
 h1 {
   font-size: 3.2em;
